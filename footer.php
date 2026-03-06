@@ -4,21 +4,16 @@
 
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 px-15 footer-block">
 						<?php echo wp_kses_post( wpautop( get_theme_mod( 'block-2' ) ) ); ?>
-					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 px-15 footer-block">
 						<?php echo wp_kses_post( wpautop( get_theme_mod( 'block-3' ) ) ); ?>
 					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 px-15 footer-block">
 						<?php echo wp_kses_post( wpautop( get_theme_mod( 'block-4' ) ) ); ?>
 					</div>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 px-15 footer-block">
+						<img src="<?php echo get_template_directory_uri() . '/src/images/Ibex-BRONZE_rgb.jpg'; ?>" alt="logo" style="max-width:180px;height:auto;object-fit:cover;">
+					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 px-15 footer-block text-center text-lg-end">
-						<?php
-						/*$footer_logo = get_theme_mod( 'block-1' );
-						if ( $footer_logo ) :
-							echo wp_get_attachment_image( $footer_logo, 'full' );
-						endif;*/
-						?>
-						<img src="<?php echo get_template_directory_uri() . '/src/images/swisstainable_engaged.png'; ?>" alt="logo" style="max-width:100%;height:auto;object-fit:cover;">
+						<img src="<?php echo get_template_directory_uri() . '/src/images/Swisstainable_3_leading_RGB.png'; ?>" alt="logo" style="max-width:100px;height:auto;object-fit:cover;">
 					</div>
 				</div><!-- row end -->
 				<div class="row justify-content-center">
