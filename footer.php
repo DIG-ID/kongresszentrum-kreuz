@@ -13,7 +13,7 @@
 						<?php echo wp_kses_post( wpautop( get_theme_mod( 'block-4' ) ) ); ?>
 					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-2 px-15 footer-block">
-						<img src="<?php echo get_template_directory_uri() . '/src/images/Ibex-BRONZE_rgb.jpg'; ?>" alt="logo" style="max-width:180px;height:auto;object-fit:cover;">
+						<img src="<?php echo get_template_directory_uri() . '/src/images/Ibex-BRONZE_rgb.jpg'; ?>" alt="logo" style="width:100%;max-width:200px;">
 					</div>
 					<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-2 px-15 footer-block text-center text-lg-end">
 						<img src="<?php echo get_template_directory_uri() . '/src/images/Swisstainable_3_leading_RGB.png'; ?>" alt="logo" style="max-width:100px;height:auto;object-fit:cover;">
