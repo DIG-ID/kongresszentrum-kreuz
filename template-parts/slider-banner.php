@@ -14,7 +14,7 @@
 				while ( $slider_banner_query->have_posts() ) :
 					$slider_banner_query->the_post();
 					$img_attr = $slide_index === 0
-						? array( 'fetchpriority' => 'high', 'loading' => 'eager' )
+						? array( 'fetchpriority' => 'high', 'loading' => 'eager', 'decoding' => 'sync' )
 						: array();
 					$slide_index++;
 					?>

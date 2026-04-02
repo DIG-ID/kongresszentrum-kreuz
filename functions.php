@@ -48,6 +48,30 @@ function theme_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+// Preload LCP hero image (first banner slide) to eliminate resource load delay.
+function kongresszentrum_preload_lcp_image() {
+	$query = new WP_Query( array(
+		'post_type'      => 'seminare_rooms',
+		'posts_per_page' => 1,
+		'order'          => 'ASC',
+		'fields'         => 'ids',
+	) );
+	if ( empty( $query->posts ) ) {
+		return;
+	}
+	$thumbnail_id = get_post_thumbnail_id( $query->posts[0] );
+	if ( ! $thumbnail_id ) {
+		return;
+	}
+	$image = wp_get_attachment_image_src( $thumbnail_id, 'banner-slider' );
+	if ( ! $image ) {
+		return;
+	}
+	echo '<link rel="preload" as="image" href="' . esc_url( $image[0] ) . '" fetchpriority="high">' . "\n";
+}
+
+add_action( 'wp_head', 'kongresszentrum_preload_lcp_image', 1 );
+
 // Custom widget for mobile language switcher
 function register_custom_language_widget() {
 	register_sidebar(
