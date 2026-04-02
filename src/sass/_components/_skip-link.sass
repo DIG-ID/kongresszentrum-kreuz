@@ -1,0 +1,38 @@
+// Skip to main content – keyboard-only accessibility link
+// Matches .button__booking design: same font, size, letter-spacing, transition
+// Sits off-screen via transform until :focus, then slides into view
+.skip-link
+  position: fixed
+  top: 0
+  left: 60px
+  z-index: 9999
+  padding: 5px 30px
+  line-height: 23px
+  background-color: $primary-color
+  color: #ffffff
+  font-family: $primary-font
+  font-size: 13.6px
+  font-weight: 400
+  letter-spacing: .1em
+  text-transform: uppercase
+  text-decoration: none
+  border: 1px solid $primary-color
+  -webkit-font-smoothing: antialiased
+  transform: translateY(-100%)
+  transition: transform .4s ease-in-out
+  &:focus
+    transform: translateY(0)
+    outline: 2px solid #ffffff
+    outline-offset: -4px
+  &:hover
+    background-color: #ffffff
+    color: $primary-color
+    border-color: $primary-color
+
+@media (max-width: $xl)
+  .skip-link
+    left: 30px
+
+@media (max-width: $sm)
+  .skip-link
+    left: 25px

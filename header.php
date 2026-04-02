@@ -21,6 +21,7 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVWHMDP8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 	<?php do_action( 'wp_body_open' ); ?>
+	<a class="skip-link" href="#main-content"><?php esc_html_e( 'Skip to main content', 'kongresszentrum-kreuz' ); ?></a>
 	<div class="site" id="page">
 
 		<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
