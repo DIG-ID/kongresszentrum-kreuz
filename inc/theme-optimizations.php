@@ -100,3 +100,20 @@ add_action( 'do_feed_rss2', 'itsme_disable_feed', 1 );
 add_action( 'do_feed_atom', 'itsme_disable_feed', 1 );
 add_action( 'do_feed_rss2_comments', 'itsme_disable_feed', 1 );
 add_action( 'do_feed_atom_comments', 'itsme_disable_feed', 1 );
+
+/**
+ * Clean up wp_head — remove unused links and meta.
+ */
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+/**
+ * Disable XML-RPC.
+ */
+add_filter( 'xmlrpc_enabled', '__return_false' );

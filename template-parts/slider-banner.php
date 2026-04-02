@@ -9,12 +9,17 @@
 				'order'     => 'ASC',
 			);
 			$slider_banner_query = new WP_Query( $slider_banner_args );
+			$slide_index = 0;
 			if ( $slider_banner_query->have_posts() ) :
 				while ( $slider_banner_query->have_posts() ) :
 					$slider_banner_query->the_post();
+					$img_attr = $slide_index === 0
+						? array( 'fetchpriority' => 'high', 'loading' => 'eager' )
+						: array();
+					$slide_index++;
 					?>
 					<article class="slider-banner swiper-slide">
-						<?php the_post_thumbnail( 'banner-slider' ); ?>
+						<?php the_post_thumbnail( 'banner-slider', $img_attr ); ?>
 						<div class="slider-banner__content d-none d-sm-none d-md-none d-lg-none d-xl-flex">
 							<div class="slider-banner__inner-content">
 								<h2 class="slider-banner__title"><?php the_title(); ?></h2>

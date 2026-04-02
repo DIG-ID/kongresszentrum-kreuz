@@ -76,7 +76,7 @@ endif;
 
 
 // Theme otimizations.
-//require get_template_directory() . '/inc/theme-optimizations.php';
+require get_template_directory() . '/inc/theme-optimizations.php';
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
